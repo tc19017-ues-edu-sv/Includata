@@ -4,4 +4,6 @@ from Dashboard.views import *
 
 urlpatterns = [
     path('includata/dashboard/', detail),
+    path('admin/', admin.site.urls),
+    
 ]
