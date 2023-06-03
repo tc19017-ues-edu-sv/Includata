@@ -1,0 +1,47 @@
+{% extends "template_base.html" %}
+
+{% block title %}The current time{% endblock %}
+
+{% block content %}
+<div class="position-relative">
+  <label for="exampleInputEmail1" class="form-label">Seleccione Año</label>
+  <input type="number" name="" id="" max="2015" min="2000" value="2017" disabled>
+</div>
+<div class="position-absolute top-50 start-50 translate-middle">
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td><a href="/includata/dashboards/FormTipoDiscapacidad"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></td>
+      <td><a href="/includata/dashboards/FormTipoDiscapacidad" style="text-decoration: none;">Ingresar Estadísticas de tipo de discapacidad<a></td>      
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td><a href="/includata/dashboards/FormSectorEconomico"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></td>
+      <td><a href="/includata/dashboards/FormSectorEconomico" style="text-decoration: none;">Ingresar Estadísticas por sectores económicos<a></td>      
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td><a href="/includata/dashboards/FormRubro"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></td>
+      <td><a href="/includata/dashboards/FormRubro" style="text-decoration: none;">Ingresar Estadísticas por rubros<a></td>      
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td><a href="/includata/dashboards/FormRangoEdad"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></td>
+      <td><a href="/includata/dashboards/FormRangoEdad" style="text-decoration: none;">Ingresar Estadísticas por rangos de edad<a></td>      
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td><a href="/includata/dashboards/FormCategoria"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></td>
+      <td><a href="/includata/dashboards/FormCategoria" style="text-decoration: none;">Ingresar Estadísticas por categoria ocupacional<a></td>      
+    </tr>
+  </tbody>
+</table>
+</div>
+{% endblock %}

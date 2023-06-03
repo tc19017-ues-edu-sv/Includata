@@ -3,5 +3,30 @@
 {% block title %}The current time{% endblock %}
 
 {% block content %}
-<h1>hola mundo</h1>
+<label for="exampleInputEmail1" class="form-label">Año censo</label>
+<input type="number" name="" id="" max="2015" min="2000" value="2017" disabled>
+
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+    {% for rubro in rubros  %}
+        <option value={{rubro.id}}>rubro.name</option>
+    {% endfor %}
+</select>
+
+  <form class="row">
+    <div class="col m-2">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Cantidad Hombres</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Cantidad Mujeres</label>
+            <input type="number" class="form-control" id="exampleInputPassword1">
+          </div>
+    </div>
+    <div class="col mt-5 m-2">
+        <button type="submit" class="btn btn-success mb-3">Guardar</button>
+        <br>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </div>
+  </form>
 {% endblock %}
