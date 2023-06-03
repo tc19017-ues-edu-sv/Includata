@@ -5,8 +5,6 @@ from Dashboard.views import *
 urlpatterns = [
     path('includata/dashboard/', detail),
     path('admin/', admin.site.urls),
-    #path('includata/dashboards/FormCategoria/', categoria),
-   
     path('includata/dashboards/censo/', vistaCenso),
     path('includata/dashboards/FormCategoria/', lista_Categoria, name='lista_Categorias'),
     path('includata/dashboards/FormTipoDiscapacidad/', lista_Discapacidad, name='lista_Discapacidad'),

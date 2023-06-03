@@ -18,7 +18,6 @@ def lista_Categoria(request):
 
 def lista_Discapacidad(request):
 
-    
     if request.method =='POST':
         nombre = request.POST['tipoDis']
         canHombre = request.POST['canHombres']
@@ -29,7 +28,7 @@ def lista_Discapacidad(request):
             cantidadMujeres=canMujeres
         )
 
-        discapacidad = tipoDiscapacidad.objects.create(
+        tipoDiscapacidad.objects.create(
             nombreDiscapacidad=nombre,
             detalle=detalle 
         )
@@ -37,8 +36,23 @@ def lista_Discapacidad(request):
     return render(request,'dashboards/FormTipoDiscapacidad.html')
 
 def lista_SectorEconomico(request):
-    sectorEco=sectorEconomico.objects.all()
-    return render(request,'dashboards/FormSectorEconomico.html',{'sector':sectorEco})
+    
+    if request.method =='POST':
+        nombre = request.POST['tipoSecE']
+        canHombre = request.POST['canHombres']
+        canMujeres = request.POST['canMujeres']
+   
+        detalle = detalleEstadisticoDiscapacitado.objects.create(
+            cantidadHombre=canHombre,
+            cantidadMujeres=canMujeres
+        )
+
+        sectorEconomico.objects.create(
+            nombreSector=nombre,
+            detalle=detalle 
+        )
+
+    return render(request,'dashboards/FormSectorEconomico.html')
 
 def lista_Rubro(request):
     rubros=rubro.objects.all()
