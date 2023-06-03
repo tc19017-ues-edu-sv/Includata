@@ -13,8 +13,21 @@ def vistaCenso(request):
     return render(request, 'dashboards/censo.html')
 
 def lista_Categoria(request):
-    categorias=categoriaOcupacional.objects.all()
-    return render(request,'dashboards/FormCategoriaOcupacional.html',{'categorias':categorias})
+    if request.method =='POST':
+        nombre = request.POST['categoria']
+        canHombre = request.POST['canHombres']
+        canMujeres = request.POST['canMujeres']
+   
+        detalle = detalleEstadisticoDiscapacitado.objects.create(
+            cantidadHombre=canHombre,
+            cantidadMujeres=canMujeres
+        )
+
+        categoriaOcupacional.objects.create(
+            nombreCategoria=nombre,
+            detalle=detalle 
+        )
+    return render(request,'dashboards/FormCategoriaOcupacional.html')
 
 def lista_Discapacidad(request):
 
@@ -32,7 +45,6 @@ def lista_Discapacidad(request):
             nombreDiscapacidad=nombre,
             detalle=detalle 
         )
-
     return render(request,'dashboards/FormTipoDiscapacidad.html')
 
 def lista_SectorEconomico(request):
@@ -55,9 +67,36 @@ def lista_SectorEconomico(request):
     return render(request,'dashboards/FormSectorEconomico.html')
 
 def lista_Rubro(request):
-    rubros=rubro.objects.all()
-    return render(request,'dashboards/FormRubro.html',{'rubro':rubros})
+     
+    if request.method =='POST':
+        nombre = request.POST['rubro']
+        canHombre = request.POST['canHombres']
+        canMujeres = request.POST['canMujeres']
+   
+        detalle = detalleEstadisticoDiscapacitado.objects.create(
+            cantidadHombre=canHombre,
+            cantidadMujeres=canMujeres
+        )
+
+        rubro.objects.create(
+             nombreRubro=nombre,
+            detalle=detalle 
+        )
+    return render(request,'dashboards/FormRubro.html')
 
 def lista_RangoEdad(request):
-    edades=rangoEdades.objects.all()
-    return render(request,'dashboards/FormRangoEdad.html',{'rango':edades})
+    if request.method =='POST':
+        nombre = request.POST['edad']
+        canHombre = request.POST['canHombres']
+        canMujeres = request.POST['canMujeres']
+   
+        detalle = detalleEstadisticoDiscapacitado.objects.create(
+            cantidadHombre=canHombre,
+            cantidadMujeres=canMujeres
+        )
+
+        rangoEdades.objects.create(
+             rangoEdad=nombre,
+            detalle=detalle 
+        )
+    return render(request,'dashboards/FormRangoEdad.html')

@@ -7,21 +7,19 @@
 <h2>Categoria Ocupacional</h2>
 <label for="exampleInputEmail1" class="form-label">Año censo</label>
 <input type="number" name="" id="" max="2015" min="2000" value="2017" disabled>
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-  {% for categoria in categorias %}
-  <option value="{{ categoria.id }}">{{ categoria.nombreCategoria }}</option>
-  {% endfor %}
-</select>
-
-  <form class="row">
+  <form class="row" method="POST">{% csrf_token %}
     <div class="col m-2">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Ingrese la Categoria Ocupacional</label>
+        <input type="text" class="form-control" name="categoria" placeholder="Categoria Ocupacional">
+      </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Cantidad Hombres</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="number" class="form-control" name="canHombres" >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Cantidad Mujeres</label>
-            <input type="number" class="form-control" id="exampleInputPassword1">
+            <input type="number" class="form-control" name="canMujeres">
           </div>
     </div>
     <div class="col mt-5 m-2">
