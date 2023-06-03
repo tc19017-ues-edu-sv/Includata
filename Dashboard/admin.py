@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from Dashboard.models import tipoDiscapacidad,sectorEconomico,rubro,categoriaOcupacional
+from Dashboard.models import tipoDiscapacidad,sectorEconomico,rubro,categoriaOcupacional,detalleEstadisticoDiscapacitado,rangoEdades
 
 # Register your models here.
 
@@ -15,3 +15,5 @@ admin.site.register(tipoDiscapacidad)
 admin.site.register(sectorEconomico)
 admin.site.register(rubro)
 admin.site.register(categoriaOcupacional)
+admin.site.register(detalleEstadisticoDiscapacitado)
+admin.site.register(rangoEdades)
